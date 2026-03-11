@@ -38,4 +38,10 @@ python main.py
 
 Then choose:
 1 → Text generation  
+
 2 → Image generation
+
+## GPU Support
+
+This project supports GPU acceleration using CUDA.
+If a compatible NVIDIA GPU is available, image generation will automatically run on the GPU for faster performance.
