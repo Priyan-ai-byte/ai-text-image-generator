@@ -10,15 +10,18 @@ class ImageModel:
         )
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
+        print("Using device:", device)
         self.pipe.to(device)
+
+
 
     def generate(self, prompt):
         image = self.pipe(
             prompt,
             height=512,
             width=512,
-            num_inference_steps=30,
-            guidance_scale=7.5
+            num_inference_steps=50,
+            guidance_scale=8.5
         ).images[0]
 
         os.makedirs("outputs", exist_ok=True)
